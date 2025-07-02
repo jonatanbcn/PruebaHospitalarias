@@ -29,10 +29,10 @@ dotnet ef database update
 ## Capturas de Pantalla
 
 ### Listado de Pacientes
-![Listado de Pacientes](Screenshots/Captura de pantalla 2025-07-02 a las 8.06.23.png)
+![Listado de Pacientes](Screenshots/lista-pacientes.png)
 
 ### Detalles de Paciente
-![Editar Paciente](Screenshots/Captura de pantalla 2025-07-02 a las 8.07.16.png)
+![Editar Paciente](Screenshots/editar-paciente.png)
 
 ## Licencia
 MIT
