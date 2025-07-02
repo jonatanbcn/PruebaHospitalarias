@@ -1,0 +1,30 @@
+﻿body {
+    padding-top: 60px;
+}
+
+/* Mejoras para tablas */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Estilos para tarjetas */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+/* Validación */
+.input-validation-error {
+    border-color: #dc3545;
+}
+
+.field-validation-error {
+    color: #dc3545;
+    font-size: 0.875em;
+}

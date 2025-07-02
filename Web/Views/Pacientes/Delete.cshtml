@@ -1,0 +1,42 @@
+﻿@model Core.Entities.Paciente
+
+@{
+    ViewData["Title"] = "Eliminar Paciente";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+            <h2 class="h5 mb-0">@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <h3 class="h6 text-danger">¿Está seguro que desea eliminar este paciente?</h3>
+
+            <div class="alert alert-warning mt-3">
+                <strong>Advertencia:</strong> Esta acción no se puede deshacer.
+            </div>
+
+            <dl class="row mt-3">
+                <dt class="col-sm-3">NHC:</dt>
+                <dd class="col-sm-9">@Model.Nhc</dd>
+
+                <dt class="col-sm-3">Nombre:</dt>
+                <dd class="col-sm-9">@Model.Nombre @Model.Apellido1</dd>
+
+                <dt class="col-sm-3">DNI:</dt>
+                <dd class="col-sm-9">@Model.Dni</dd>
+            </dl>
+
+            <form asp-action="Delete" class="mt-4">
+                <input type="hidden" asp-for="Nhc" />
+                <button type="submit" class="btn btn-danger me-2">
+                    <i class="bi bi-trash"></i> Confirmar Eliminación
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Cancelar
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+

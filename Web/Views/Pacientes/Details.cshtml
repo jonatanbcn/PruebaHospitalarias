@@ -1,0 +1,48 @@
+﻿@model Core.Entities.Paciente
+
+@{
+    ViewData["Title"] = "Detalles del Paciente";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h2 class="h5 mb-0">@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">NHC:</dt>
+                <dd class="col-sm-9">@Model.Nhc</dd>
+
+                <dt class="col-sm-3">Nombre Completo:</dt>
+                <dd class="col-sm-9">@Model.Nombre @Model.Apellido1 @Model.Apellido2</dd>
+
+                <dt class="col-sm-3">DNI:</dt>
+                <dd class="col-sm-9">@Model.Dni</dd>
+
+                <dt class="col-sm-3">Fecha Nacimiento:</dt>
+                <dd class="col-sm-9">@Model.FechaNacimiento.ToShortDateString()</dd>
+
+                <dt class="col-sm-3">Edad:</dt>
+                <dd class="col-sm-9">@(DateTime.Now.Year - Model.FechaNacimiento.Year)</dd>
+
+                <dt class="col-sm-3">Sexo:</dt>
+                <dd class="col-sm-9">
+                    @(Model.Sexo == "H" ? "Hombre" : Model.Sexo == "M" ? "Mujer" : "Otro")
+                </dd>
+
+                <dt class="col-sm-3">Observaciones:</dt>
+                <dd class="col-sm-9">@Model.Observaciones</dd>
+            </dl>
+
+            <div class="mt-4">
+                <a asp-action="Edit" asp-route-id="@Model.Nhc" class="btn btn-warning me-2">
+                    <i class="bi bi-pencil"></i> Editar
+                </a>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Volver al listado
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

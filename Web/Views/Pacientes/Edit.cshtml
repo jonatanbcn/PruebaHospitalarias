@@ -1,0 +1,84 @@
+﻿@model Core.Entities.Paciente
+
+@{
+    ViewData["Title"] = "Editar Paciente";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-white">
+            <h2 class="h5 mb-0">@ViewData["Title"]</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" class="needs-validation" novalidate>
+                <input type="hidden" asp-for="Nhc" />
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" required />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Apellido1" class="form-label"></label>
+                        <input asp-for="Apellido1" class="form-control" required />
+                        <span asp-validation-for="Apellido1" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Apellido2" class="form-label"></label>
+                        <input asp-for="Apellido2" class="form-control" />
+                        <span asp-validation-for="Apellido2" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Dni" class="form-label"></label>
+                        <input asp-for="Dni" class="form-control" required />
+                        <span asp-validation-for="Dni" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="FechaNacimiento" class="form-label"></label>
+                        <input type="date" asp-for="FechaNacimiento" class="form-control" required />
+                        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Sexo" class="form-label"></label>
+                        <select asp-for="Sexo" class="form-select" required>
+                            <option value="">Seleccione...</option>
+                            <option value="H">Hombre</option>
+                            <option value="M">Mujer</option>
+                            <option value="O">Otro</option>
+                        </select>
+                        <span asp-validation-for="Sexo" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="Observaciones" class="form-label"></label>
+                        <textarea asp-for="Observaciones" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Observaciones" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-warning me-2">
+                            <i class="bi bi-save"></i> Actualizar
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Cancelar
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
